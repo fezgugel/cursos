@@ -1,7 +1,31 @@
 <html>
 <head>
-<meta http-equiv="refresh" content="0; URL=https://fezgugel.sitefg.com/">
+<link rel="stylesheet" href="estilos.css">
+<script>
+const slider = document.querySelector('#slider');
+const images = slider.querySelectorAll('img');
+
+slider.addEventListener('scroll', function() {
+  const windowHeight = window.innerHeight;
+  images.forEach(function(image) {
+    const imageTop = image.getBoundingClientRect().top;
+    if (imageTop < windowHeight) {
+      image.style.opacity = 1;
+    }
+  });
+});
+
+
+</script>
 </head>
+
 <body>
+
+<div id="slider">
+  <img src="anapol.JPG" alt="Imagen 1">
+  <img src="colmilav.JPG" alt="Imagen 2">
+  <img src="ESFM.JPG" alt="Imagen 3">
+  <!-- ... -->
+</div>
 </body>
 </html>
